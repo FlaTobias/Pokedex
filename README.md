@@ -2,7 +2,7 @@
 
   
 <h1 align="center">
-  <img alt="pokemon" title="Rocket.Q" src=".github/capa.png" width="220px" />
+  <img alt="pokemon" title="Pokemon" src=".github/pokemon.png" width="420px" />
 </h1>
 
 <p align="center">
@@ -25,6 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Html
 - Javascript
+- Scss
 - Gulp
 
 ## :information_source: Descrição:
