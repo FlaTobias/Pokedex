@@ -42,4 +42,4 @@ Você pode acessar por aqui:
     Feito com ♥ por Flavio Tobias 👋 <a href="https://www.linkedin.com/in/flaviotobias/" target="_blank">Entre em contato!</a>
 </h4>
 
-[demo]: https://flavio-pokedex.netlify.app/
+[demo]: https://629abd1766630818a038bc39--flavio-pokedex.netlify.app/
