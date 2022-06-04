@@ -1,0 +1,49 @@
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexTotal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsive($screenWidth) {
+  @media (max-width: $screenWidth) {
+    @content;
+  }
+}
+
+@mixin colorTypeFilter($color) {
+  span {
+    color: $color;
+  }
+}
+
+@mixin colorTagPokemon($colorTag) {
+  color: $colorTag;
+  background-color: transparentize($colorTag, 0.9);
+}
+
+@mixin colorCardPokemon($colorbg) {
+  .image {
+    &::after {
+      background-color: $colorbg;
+      opacity: 0.2;
+    }
+  }
+}
+
+@mixin responsive($screenWidth) {
+  @media (max-width: $screenWidth) {
+    @content;
+  }
+}

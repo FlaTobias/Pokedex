@@ -1,0 +1,748 @@
+.tag {
+  @include flexCenter;
+  background-color: white;
+  border-radius: 244px;
+  max-width: 12.1rem;
+  padding: 6px 4px;
+
+  &.blue-tag {
+    .icon {
+      background: rgba(63, 104, 186, 0.15);
+    }
+
+    span {
+      color: $blue;
+    }
+  }
+
+  .icon {
+    @include flexTotal;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: rgba(194, 0, 0, 0.2);
+    border-radius: 50%;
+    margin-right: 0.8rem;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: $red;
+  }
+}
+
+.search {
+  height: 56px;
+  width: 100%;
+  max-width: 40.3rem;
+  @include flexCenter;
+  justify-content: space-between;
+  padding-left: 2.5rem;
+  padding-right: 7px;
+  background-color: white;
+  border-radius: 12.2rem;
+  transition: all 0.3s;
+
+  &:hover {
+    border: 1px solid #3e75c3;
+  }
+
+  input[type="text"] {
+    border: 0;
+    outline: none;
+    width: 80%;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: #a0afba;
+    transition: all 0.3s;
+
+    &::placeholder {
+      color: #a0afba;
+    }
+  }
+
+  button {
+    @include flexTotal;
+    width: 42px;
+    height: 42px;
+    background: rgba(158, 185, 225, 0.1);
+    border: 0.1rem solid transparent;
+    border-radius: 50%;
+  }
+}
+
+.type-filter {
+  @include flexCenter;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s;
+
+  &:hover,
+  &.active {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  .icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    @include flexTotal;
+    margin-right: 0.5rem;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 150%;
+  }
+
+  &.all {
+    @include colorTypeFilter($all);
+  }
+
+  &.bug {
+    @include colorTypeFilter($bug);
+  }
+
+  &.dark {
+    @include colorTypeFilter($dark);
+  }
+
+  &.dragon {
+    @include colorTypeFilter($dragon);
+  }
+
+  &.electric {
+    @include colorTypeFilter($electric);
+  }
+
+  &.fairy {
+    @include colorTypeFilter($fairy);
+  }
+
+  &.fighting {
+    @include colorTypeFilter($fighting);
+  }
+
+  &.ground {
+    @include colorTypeFilter($ground);
+  }
+
+  &.ice {
+    @include colorTypeFilter($ice);
+  }
+
+  &.normal {
+    @include colorTypeFilter($normal);
+  }
+
+  &.poison {
+    @include colorTypeFilter($poison);
+  }
+
+  &.psychic {
+    @include colorTypeFilter($psychic);
+  }
+
+  &.rock {
+    @include colorTypeFilter($rock);
+  }
+
+  &.ghost {
+    @include colorTypeFilter($ghost);
+  }
+
+  &.grass {
+    @include colorTypeFilter($grass);
+  }
+
+  &.steel {
+    @include colorTypeFilter($steel);
+  }
+
+  &.water {
+    @include colorTypeFilter($water);
+  }
+
+  &.fire {
+    @include colorTypeFilter($fire);
+  }
+
+  &.flying {
+    @include colorTypeFilter($flying);
+  }
+}
+
+.card-pokemon {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+  height: 30.4rem;
+  background-color: white;
+  box-shadow: 0px 10px 51px -5px rgba(183, 189, 193, 0.3);
+  border-radius: 1.2rem;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 12px 40px -5px rgba(90, 96, 100, 0.3);
+  }
+
+  .image {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    @include flexTotal;
+    margin: 0 auto;
+    margin-bottom: 1.4rem;
+
+    .thumb-img {
+      max-width: 14.2rem;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 16.5rem;
+      height: 16.5rem;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
+  .info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 2.8rem;
+
+    .text {
+      span {
+        display: block;
+        text-align: left;
+        font-weight: 500;
+        font-size: 1.3rem;
+        line-height: 150%;
+        color: #7a7d80;
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    .icon {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &.bug {
+    @include colorCardPokemon($bug);
+  }
+
+  &.dark {
+    @include colorCardPokemon($dark);
+  }
+
+  &.dragon {
+    @include colorCardPokemon($dragon);
+  }
+
+  &.electric {
+    @include colorCardPokemon($electric);
+  }
+
+  &.fairy {
+    @include colorCardPokemon($fairy);
+  }
+
+  &.fighting {
+    @include colorCardPokemon($fighting);
+  }
+
+  &.ground {
+    @include colorCardPokemon($ground);
+  }
+
+  &.ice {
+    @include colorCardPokemon($ice);
+  }
+
+  &.normal {
+    @include colorCardPokemon($normal);
+  }
+
+  &.poison {
+    @include colorCardPokemon($poison);
+  }
+
+  &.psychic {
+    @include colorCardPokemon($psychic);
+  }
+
+  &.rock {
+    @include colorCardPokemon($rock);
+  }
+
+  &.ghost {
+    @include colorCardPokemon($ghost);
+  }
+
+  &.grass {
+    @include colorCardPokemon($grass);
+  }
+
+  &.steel {
+    @include colorCardPokemon($steel);
+  }
+
+  &.water {
+    @include colorCardPokemon($water);
+  }
+
+  &.fire {
+    @include colorCardPokemon($fire);
+  }
+
+  &.flying {
+    @include colorCardPokemon($flying);
+  }
+
+  @include responsive(1200px) {
+    max-width: 100%;
+  }
+}
+
+.tag-type {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  padding: 0 2.5rem;
+  border-radius: 0.2rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+
+  &.bug {
+    @include colorTagPokemon($bug);
+  }
+
+  &.dark {
+    @include colorTagPokemon($dark);
+  }
+
+  &.electric {
+    @include colorTagPokemon($electric);
+  }
+
+  &.fairy {
+    @include colorTagPokemon($fairy);
+  }
+
+  &.fighting {
+    @include colorTagPokemon($fighting);
+  }
+
+  &.ground {
+    @include colorTagPokemon($ground);
+  }
+
+  &.ice {
+    @include colorTagPokemon($ice);
+  }
+
+  &.normal {
+    @include colorTagPokemon($normal);
+  }
+
+  &.poison {
+    @include colorTagPokemon($poison);
+  }
+
+  &.psychic {
+    @include colorTagPokemon($psychic);
+  }
+
+  &.rock {
+    @include colorTagPokemon($rock);
+  }
+
+  &.ghost {
+    @include colorTagPokemon($ghost);
+  }
+
+  &.grass {
+    @include colorTagPokemon($grass);
+  }
+
+  &.steel {
+    @include colorTagPokemon($steel);
+  }
+
+  &.water {
+    @include colorTagPokemon($water);
+  }
+
+  &.fire {
+    @include colorTagPokemon($fire);
+  }
+
+  &.flying {
+    @include colorTagPokemon($flying);
+  }
+}
+
+.btn-load-more {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(63, 93, 179, 0.1);
+  border-radius: 0.6rem;
+  padding: 1.4rem 2rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  letter-spacing: -0.01em;
+  color: $blue-others;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $blue-others;
+    color: white;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include flexTotal;
+  z-index: 2022;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  $listPokemons: bug, dark, dragon, electric, fairy, fighting, ground, ice,
+    normal, poison, psychic, rock, ghost, grass, steel, water, fire, flying;
+
+  @each $type in $listPokemons {
+    &[typePokemonModal="#{$type}"] {
+      .left-container {
+        background-image: url("../img/bg-types/#{$type}.svg");
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .box {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 71rem;
+    height: 50.8rem;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 0 1rem 4rem rgba(13, 12, 71, 0.05);
+    border-radius: 1.6rem;
+    transition: all 0.3s ease-in;
+    transform: translateY(4rem);
+
+    .close {
+      position: absolute;
+      top: -4.4rem;
+      right: 0;
+      width: 3.6rem;
+      height: 3.6rem;
+      background: #ffffff;
+      border-radius: 0.8rem;
+      @include flexTotal;
+    }
+
+    .left-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 19.1rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      .icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 3.4rem;
+        height: 3.4rem;
+        background-color: white;
+        border-radius: 50%;
+        @include flexTotal;
+      }
+
+      .image {
+        position: absolute;
+        left: 1.4rem;
+        bottom: 13.8rem;
+        width: 20.2rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .right-container {
+      padding: 3.5rem 7.2rem 2.9rem 7.4rem;
+      width: 100%;
+      .name {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 1rem;
+        h2 {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 2.8rem;
+          line-height: 3.4rem;
+          letter-spacing: -0.01em;
+          color: #2f3133;
+        }
+        span {
+          position: relative;
+          top: -0.3rem;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          letter-spacing: -0.01em;
+          color: #7a7d80;
+          margin-left: 0.8rem;
+        }
+      }
+
+      .type {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 3.2rem;
+        li {
+          &:not(:first-child) {
+            margin-left: 1rem;
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        li {
+          &:not(:first-child) {
+            margin-left: 4.8rem;
+          }
+          span {
+            display: block;
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+            letter-spacing: -0.01em;
+            color: #7a7d80;
+            margin-bottom: 0.4rem;
+          }
+
+          strong {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+            letter-spacing: -0.01em;
+            color: #2f3133;
+          }
+        }
+      }
+
+      .weak {
+        margin-bottom: 1rem;
+        h4 {
+          font-weight: 600;
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+          letter-spacing: -0.01em;
+          margin-bottom: 1.6rem;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          flex-wrap: wrap;
+
+          li {
+            margin-bottom: 1rem;
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+
+      .stats {
+        h5 {
+          font-weight: 600;
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+          letter-spacing: -0.01em;
+          color: #4d5053;
+          margin-bottom: 1.6rem;
+        }
+        .all {
+          .item {
+            @include flex(row, center, space-between);
+            &:not(:last-child) {
+              margin-bottom: 1.3rem;
+            }
+            span {
+              display: block;
+              width: 6.8rem;
+              font-weight: 400;
+              font-size: 1.2rem;
+              line-height: 1.5rem;
+              color: #7a7d80;
+            }
+            .bar-status {
+              position: relative;
+              width: 100%;
+              max-width: 28.3rem;
+              height: 0.3rem;
+              background-color: #eff3f6;
+              .bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 56%;
+                height: 100%;
+                z-index: 0;
+                background-color: #c20001;
+              }
+              .separator {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                @include flex(row, center, center);
+                li {
+                  width: 0.4rem;
+                  height: 0.3rem;
+                  background-color: white;
+                  &:not(:first-child) {
+                    margin-left: 5.4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(560px) {
+    align-items: flex-end;
+    .box {
+      width: 100%;
+      height: 85%;
+      flex-direction: column;
+      .close {
+        width: 5rem;
+        height: 5rem;
+        top: -5rem;
+        border-radius: 8px 8px 0 0;
+
+        img {
+          width: 2.5rem;
+        }
+      }
+
+      .left-container {
+        max-width: 100%;
+        height: 12.5rem;
+        background-size: cover;
+
+        .image {
+          left: 50%;
+          bottom: -2.5rem;
+          width: 12rem;
+          margin-left: -6rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .right-container {
+        padding: 4rem 2.4rem;
+        .name,
+        .type,
+        .info {
+          justify-content: center;
+        }
+        .weak {
+          h4 {
+            text-align: center;
+          }
+
+          ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+            li {
+              &:not(:first-child) {
+                margin: 0;
+              }
+
+              .tag-type {
+                width: 100%;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        .stats {
+          .all {
+            .item {
+              .bar-status {
+                max-width: 75%;
+                .separator {
+                  li {
+                    &:not(:first-child) {
+                      margin-left: 19%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.open-modal {
+  .modal {
+    opacity: 1;
+    pointer-events: all;
+
+    .box {
+      transform: translateY(0);
+    }
+  }
+}
